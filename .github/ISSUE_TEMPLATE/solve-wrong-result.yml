@@ -1,0 +1,50 @@
+name: Solve — wrong result
+description: Solver returned a plate/center that looks wrong.
+title: "[solve] Wrong result: "
+labels: ["product:solve", "kind:wrong-result"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve **solve**. Attach the image if possible (under ~20 MiB).
+        Do not paste secrets, private URLs, or credentials.
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options:
+        - solve
+    validations:
+      required: true
+  - type: dropdown
+    id: what-happened
+    attributes:
+      label: What happened
+      options:
+        - Wrong result
+        - Plausible but incorrect center / orientation
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What was wrong? Known target / approximate RA-Dec if you have it.
+    validations:
+      required: true
+  - type: textarea
+    id: result-blob
+    attributes:
+      label: Result blob (optional)
+      description: Paste the compact solution JSON from the UI if shown (no Clio or corp URLs).
+      render: json
+  - type: input
+    id: build
+    attributes:
+      label: App / site build (if known)
+  - type: checkboxes
+    id: image
+    attributes:
+      label: Image
+      options:
+        - label: I attached the image to this issue (or will in a follow-up comment)

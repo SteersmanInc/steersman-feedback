@@ -1,0 +1,52 @@
+name: Solve — did not solve
+description: Image should have plate-solved but failed or timed out.
+title: "[solve] Did not solve: "
+labels: ["product:solve", "kind:failed-solve"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve **solve**. Attach the image if possible (under ~20 MiB).
+        Do not paste secrets, private URLs, or credentials.
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options:
+        - solve
+    validations:
+      required: true
+  - type: dropdown
+    id: what-happened
+    attributes:
+      label: What happened
+      options:
+        - Did not solve
+        - Timed out / budget exhausted
+        - Error message (describe below)
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What you expected vs what you saw. Include FOV/hints if you set any.
+    validations:
+      required: true
+  - type: textarea
+    id: result-blob
+    attributes:
+      label: Result / error blob (optional)
+      description: Paste the compact JSON or error text from the solve UI if shown (no Clio or corp URLs).
+      render: json
+  - type: input
+    id: build
+    attributes:
+      label: App / site build (if known)
+      placeholder: URL or version string
+  - type: checkboxes
+    id: image
+    attributes:
+      label: Image
+      options:
+        - label: I attached the image to this issue (or will in a follow-up comment)

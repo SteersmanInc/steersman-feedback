@@ -1,0 +1,20 @@
+name: Other feedback
+description: General product feedback (not a solve fail/wrong-plate report).
+title: "[other] "
+labels: ["product:other"]
+body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options:
+        - solve
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Feedback
+    validations:
+      required: true
